@@ -20,7 +20,7 @@ struct HelpCommand: ParsableCommand {
   
   init() {}
   
-  mutating func run() throws {
+  mutating func run<ResultType>(_ resultContainer: inout Optional<ResultType>) throws {
     throw CommandError(commandStack: commandStack, parserError: .helpRequested)
   }
   
